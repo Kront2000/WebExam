@@ -1,0 +1,164 @@
+@use 'variables' as *;
+
+.hero {
+    background-color: $primary-foreground;
+    width: 100%;
+    padding-top: 120px;
+    padding-bottom: 20px;
+
+    @media (min-width: 768px) {
+        padding-top: 0;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+
+        @media (min-width: 768px) {
+            max-width: 768px;
+        }
+
+        @media (min-width: 1024px) {
+            max-width: 1024px;
+        }
+
+        @media (min-width: 1280px) {
+            max-width: 1280px;
+        }
+
+        @media (min-width: 1536px) {
+            max-width: 1536px;
+        }
+
+        // Картинка и текст
+        .flex-block {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+
+            @media (min-width: 768px) {
+                flex-direction: row-reverse;
+                transform: translate(0, 100px);
+            }
+
+            @media (min-width: 1024px) {
+                transform: translate(0, 120px);
+            }
+
+            @media (min-width: 1280px) {
+                transform: translate(0, 140px);
+            }
+
+            img {
+
+
+
+                @media (min-width: 768px) {
+                    width: 50%;
+                }
+            }
+
+            //Блок с текстом
+            .text-block {
+                gap: 20px;
+                display: flex;
+                flex-direction: column;
+
+                @media (min-width: 500px) {
+                    padding: 0 15px;
+                }
+
+                @media (min-width: 768px) {
+                    width: 65%;
+                    padding-top: 50px;
+                }
+
+                @media (min-width: 1024px) {
+                    width: 50%;
+                    padding-top: 80px;
+                }
+
+                @media (min-width: 1024px) {
+
+                    padding-top: 80px;
+                }
+
+                @media (min-width: 1280px) {
+
+                    padding-top: 120px;
+                }
+
+                h1 {
+                    line-height: 1.3rem;
+
+                    @media (min-width: 500px) {
+                        font-size: 50px;
+                        line-height: 2.2rem;
+                    }
+
+                    @media (min-width: 1024px) {
+                        font-size: 50px;
+                        line-height: 2.2rem;
+                    }
+
+                    @media (min-width: 1024px) {
+                        font-size: 60px;
+                        line-height: 2.6rem;
+                    }
+                }
+
+                .description {
+                    @media (min-width: 500px) {
+                        font-size: 20px;
+                        line-height: 2rem;
+                    }
+
+                    @media (min-width: 768px) {
+                        font-size: 18px;
+                        line-height: 2rem;
+                    }
+
+                    @media (min-width: 1024px) {
+                        font-size: 20px;
+                        line-height: 2.2rem;
+                    }
+
+                    @media (min-width: 1024px) {
+                        font-size: 25px;
+                        line-height: 2.4rem;
+                    }
+
+                }
+
+                &__button {
+                    width: fit-content;
+                    background-color: $primary;
+                    padding: 1px 4px;
+                    border-radius: 10px;
+                    color: white;
+                    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+                    @media (min-width: 500px) {
+                        font-size: 20px;
+                        padding: 4px 8px;
+
+                    }
+
+                    @media (min-width: 1024px) {
+                        font-size: 20px;
+                        padding: 4px 8px;
+
+                    }
+
+                    @media (min-width: 1024px) {
+                        font-size: 25px;
+                        padding: 6px 10px;
+                        border-radius: 14px;
+
+                    }
+                }
+            }
+        }
+    }
+}
