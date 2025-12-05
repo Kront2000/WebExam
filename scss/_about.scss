@@ -1,0 +1,291 @@
+// Переменные
+$color-blue: #60a5fa; // blue-400
+$color-text-dark: #3c3c3c; // stone-800
+$color-text-medium: #78716c; // stone-700
+$color-text-light: #7a7a7a; // stone-600
+
+// Миксины для медиа-запросов (breakpoints из Tailwind)
+@mixin xs { @media (min-width: 320px) { @content; } }
+@mixin sm { @media (min-width: 640px) { @content; } }
+@mixin md { @media (min-width: 768px) { @content; } }
+@mixin lg { @media (min-width: 1024px) { @content; } }
+@mixin xl { @media (min-width: 1280px) { @content; } }
+@mixin xxl { @media (min-width: 1536px) { @content; } }
+
+// Базовые стили и сброс
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.roboto-condensed {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include sm {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    @include lg {
+        max-width: 1024px;
+    }
+    @include xl {
+        max-width: 1280px;
+    }
+    @include xxl {
+        max-width: 1536px;
+    }
+}
+
+// --- Блок "О нас" (About Component) ---
+.about-section {
+    @include md {
+        margin-top: 10rem;
+    }
+    margin-top: 5rem; // mt-20
+}
+
+// --- Заголовок (Title Component) ---
+.about-header {
+    padding: 1rem;
+
+    @include sm {
+        padding: 0 2rem;
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    @include md {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__main-title {
+        width: 100%;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        text-align: left;
+        font-weight: 800;
+        color: $color-text-dark;
+        
+        font-size: 1.5rem;
+        line-height: 1.25;
+        
+        @include xs {
+            font-size: 1.875rem;
+            line-height: 1.5;
+        }
+        @include sm {
+            font-size: 2.25rem;
+            line-height: 1.75;
+        }
+        @include xl {
+            font-size: 3rem;
+            line-height: 2.5rem;
+        }
+
+        @include md {
+            width: 45%;
+        }
+
+        &--blue {
+            color: $color-blue;
+        }
+    }
+
+    &__small-text {
+        width: 90%;
+        max-width: 70%;
+        font-weight: 200;
+        color: $color-text-light;
+        
+        font-size: 0.75rem;
+        @include xs {
+            font-size: 0.875rem;
+        }
+        @include sm {
+            font-size: 1rem;
+        }
+        @include xl {
+            font-size: 1.25rem;
+        }
+
+        @include md {
+            width: 35%;
+            padding-top: 1.5rem;
+            text-align: left;
+        }
+        @include xl {
+            width: 30%;
+        }
+    }
+}
+
+
+// --- Контент (Текст и Картинки) ---
+.about-content {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 2.5rem;
+    gap: 3rem;
+
+    @include lg {
+        margin-top: 3.5rem;
+    }
+    @include xl {
+        margin-top: 5.5rem;
+    }
+    @include xxl {
+        margin-top: 8rem;
+        justify-content: space-between;
+    }
+
+    @include sm {
+        gap: 5rem;
+    }
+
+    @include md {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+}
+
+// --- Блок Текста (AboutText Components) ---
+.about-text-list {
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 0.5rem;
+
+    @include xs {
+        gap: 1rem;
+    }
+    @include sm {
+        gap: 3rem;
+    }
+    @include md {
+        gap: 0.25rem;
+        width: 30%;
+        height: fit-content;
+    }
+    @include lg {
+        gap: 0.75rem;
+        width: 35%;
+        padding-top: 0.5rem;
+    }
+    @include xl {
+        padding-top: 2rem;
+    }
+}
+
+.about-text-item {
+    display: flex;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    justify-content: space-between;
+    
+    &__icon-wrapper {
+        width: 9%;
+    }
+
+    &__icon {
+        width: 100%;
+        aspect-ratio: 1/1;
+    }
+
+    &__text {
+        width: 89%;
+        font-weight: 200;
+        color: $color-text-medium;
+
+        font-size: 0.875rem;
+        @include xs {
+            font-size: 1rem;
+        }
+        @include sm {
+            font-size: 1.25rem;
+        }
+        @include md {
+            font-size: 0.875rem;
+        }
+        @include lg {
+            font-size: 1.125rem;
+        }
+        @include xl {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+// --- Блок Изображений ---
+.about-images {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+    height: fit-content;
+    align-items: flex-end;
+
+    @include md {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        width: 70%;
+    }
+    @include lg {
+        width: 65%;
+    }
+    @include xxl {
+        width: 55%;
+    }
+
+    // Стиль для всех изображений
+    &__main, &__small-sq, &__sub-wide {
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        object-fit: cover;
+        width: 100%;
+    }
+
+    &__main {
+        aspect-ratio: 2 / 3;
+        border-radius: 1rem;
+    }
+    
+    &__sub-block {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    &__sub-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    &__small-sq {
+        aspect-ratio: 1 / 1;
+        border-radius: 2rem;
+    }
+
+    &__sub-wide {
+        aspect-ratio: 3 / 2;
+        border-radius: 1rem;
+    }
+}
