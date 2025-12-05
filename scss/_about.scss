@@ -1,31 +1,5 @@
-// Переменные
-$color-blue: #60a5fa; // blue-400
-$color-text-dark: #3c3c3c; // stone-800
-$color-text-medium: #78716c; // stone-700
-$color-text-light: #7a7a7a; // stone-600
-
-// Миксины для медиа-запросов (breakpoints из Tailwind)
-@mixin xs { @media (min-width: 320px) { @content; } }
-@mixin sm { @media (min-width: 640px) { @content; } }
-@mixin md { @media (min-width: 768px) { @content; } }
-@mixin lg { @media (min-width: 1024px) { @content; } }
-@mixin xl { @media (min-width: 1280px) { @content; } }
-@mixin xxl { @media (min-width: 1536px) { @content; } }
-
-// Базовые стили и сброс
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Arial, sans-serif;
-}
-
-.roboto-condensed {
-    font-family: 'Roboto Condensed', sans-serif;
-}
+@use 'mixins' as *;
+@use 'variables' as *;
 
 .container {
     width: 100%;

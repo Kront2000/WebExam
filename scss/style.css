@@ -56,6 +56,10 @@ html {
     scroll-behavior: auto !important;
   }
 }
+.roboto-condensed {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -386,20 +390,6 @@ html {
     padding: 6px 10px;
     border-radius: 14px;
   }
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-}
-
-.roboto-condensed {
-  font-family: "Roboto Condensed", sans-serif;
 }
 
 .container {

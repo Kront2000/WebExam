@@ -1,2 +1,11 @@
 $primary-foreground: rgba(235,249,255, 1);
 $primary: oklch(70.7% 0.165 254.624);
+$color-blue: #60a5fa; // blue-400
+$color-text-dark: #3c3c3c; // stone-800
+$color-text-medium: #78716c; // stone-700
+$color-text-light: #7a7a7a; // stone-600
+
+//Шрифты
+.roboto-condensed {
+    font-family: 'Roboto Condensed', sans-serif;
+}
